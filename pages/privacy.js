@@ -82,8 +82,6 @@ export default function Privacy() {
         <h2 style={{ marginTop: 24 }}>Contact</h2>
         <p>For questions about this Policy or the Application’s privacy practices, contact:</p>
         <p>
-          <strong>Marek Brichcín</strong>
-          <br />
           Email: <a href="mailto:profiro.finance@gmail.com">profiro.finance@gmail.com</a>
           <br />
           Website: <a href="https://www.profiroapp.com">https://www.profiroapp.com</a>

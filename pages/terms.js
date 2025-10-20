@@ -111,8 +111,6 @@ export default function Terms() {
 
         <h2 style={{ marginTop: 24 }}>Contact</h2>
         <p>
-          <strong>Marek Brichcín</strong>
-          <br />
           Email: <a href="mailto:profiro.finance@gmail.com">profiro.finance@gmail.com</a>
           <br />
           Website: <a href="https://www.profiroapp.com">https://www.profiroapp.com</a>
