@@ -26,7 +26,6 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://www.profiroapp.com/og/home.png" />
-        <link rel="icon" href="/favicon.ico" />
         {/* <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
       </Head>
 
