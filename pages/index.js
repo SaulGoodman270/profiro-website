@@ -21,7 +21,11 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.profiroapp.com/" />
-        {/* <meta property="og:image" content="https://www.profiroapp.com/og-image.jpg" /> */}
+        <meta property="og:image" content="https://www.profiroapp.com/og/home.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.profiroapp.com/og/home.png" />
         <link rel="icon" href="/favicon.ico" />
         {/* <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
       </Head>
@@ -31,6 +35,13 @@ export default function Home() {
       {/* HERO */}
       <header className="hero" style={{ padding: "40px 16px 24px", textAlign: "center" }}>
         <div className="container" style={{ maxWidth: 980, margin: "0 auto" }}>
+        <img
+        src="/brand/profiro-logo-black.png"
+        alt="Profiro logo"
+        width="80"
+        height="80"
+        style={{ marginBottom: 20 }}
+        />
           <h1 style={{ marginBottom: 12 }}>Profiro — Plan Your Path to Financial Freedom</h1>
           <p style={{ margin: "0 auto 20px", maxWidth: 760, lineHeight: 1.6 }}>
             Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you.
