@@ -16,3 +16,66 @@ h1, h2, h3 { line-height: 1.25; }
 .legal p, .legal li { color: #374151; }
 .blog-list li { margin: 8px 0; }
 code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+
+/* -------- Hero (landing) -------- */
+.hero {
+  padding: 36px 16px 16px;           /* menší spodní mezera než dřív */
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.brandmark {
+  display: block;
+  margin: 0 auto 8px;                /* logo + malá mezera */
+  width: 84px;
+  height: 84px;
+}
+
+.appname {
+  margin: 0 0 10px;                  /* Profiro pod logem */
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.hero-title {
+  margin: 0 0 10px;                  /* headline zvlášť */
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.hero-tagline {
+  margin: 0 auto 14px;               /* menší mezera nad badge */
+  max-width: 760px;
+  line-height: 1.6;
+  color: #464a50;
+}
+
+.store-badge {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;               /* ↓ zmenší mezeru k "Why Profiro?" */
+}
+
+/* Desktop vylepšení */
+@media (min-width: 768px) {
+  .brandmark { width: 92px; height: 92px; margin-bottom: 10px; }
+  .appname   { font-size: 32px; margin-bottom: 12px; }
+  .hero-title{ font-size: 32px; margin-bottom: 12px; }
+  .hero      { padding-top: 48px; }
+  .store-badge { margin-bottom: 16px; }
+}
+
+/* Velké displeje */
+@media (min-width: 1024px) {
+  .brandmark { width: 100px; height: 100px; }
+  .appname   { font-size: 36px; }
+  .hero-title{ font-size: 36px; }
+}

@@ -33,40 +33,49 @@ export default function Home() {
       <Nav />
 
       {/* HERO */}
-      <header className="hero" style={{ padding: "40px 16px 24px", textAlign: "center" }}>
-        <div className="container" style={{ maxWidth: 980, margin: "0 auto" }}>
-        <img
-        src="/brand/profiro-logo-black.png"
-        alt="Profiro logo"
-        width="80"
-        height="80"
-        style={{ marginBottom: 20 }}
-        />
-          <h1 style={{ marginBottom: 12 }}>Profiro — Plan Your Path to Financial Freedom</h1>
-          <p style={{ margin: "0 auto 20px", maxWidth: 760, lineHeight: 1.6 }}>
-            Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you.
-            Privacy-first, on your iPhone.
-          </p>
+<header className="hero">
+  <div className="container hero-inner">
+    {/* Logo */}
+    <img
+      src="/brand/profiro-logo-black.png"
+      alt="Profiro logo"
+      className="brandmark"
+      width={96}
+      height={96}
+      loading="eager"
+      decoding="async"
+    />
 
-          {/* App Store Badge */}
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <a
-              href="https://apps.apple.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download on the App Store"
-            >
-              <img
-                src="/badges/app-store-badge.svg"
-                alt="Download on the App Store"
-                width="180"
-                height="60"
-                style={{ display: "block" }}
-              />
-            </a>
-          </div>
-        </div>
-      </header>
+    {/* Název značky pod logem */}
+    <h1 className="appname">Profiro</h1>
+
+    {/* Hlavní headline zvlášť */}
+    <h2 className="hero-title">Plan Your Path to Financial Freedom</h2>
+
+    {/* Podtitul */}
+    <p className="hero-tagline">
+      Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you.
+      Privacy-first, on your iPhone.
+    </p>
+
+    {/* App Store badge */}
+    <div className="store-badge">
+      <a
+        href="https://apps.apple.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download on the App Store"
+      >
+        <img
+          src="/badges/app-store-badge.svg"
+          alt="Download on the App Store"
+          width="180"
+          height="60"
+        />
+      </a>
+    </div>
+  </div>
+</header>
 
       <main
         className="container"
