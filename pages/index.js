@@ -73,6 +73,17 @@ export default function Home() {
         />
       </a>
     </div>
+
+{/* SCREENSHOTS SECTION */}
+    <div className="screenshots">
+      <img src="/screenshots/1.png" alt="Profiro screenshot 1" />
+      <img src="/screenshots/2.png" alt="Profiro screenshot 2" />
+      <img src="/screenshots/3.png" alt="Profiro screenshot 3" />
+      <img src="/screenshots/4.png" alt="Profiro screenshot 4" />
+      <img src="/screenshots/5.png" alt="Profiro screenshot 5" />
+      <img src="/screenshots/6.png" alt="Profiro screenshot 6" />
+    </div>
+
   </div>
 </header>
 

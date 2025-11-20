@@ -79,3 +79,27 @@ code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
   .appname   { font-size: 36px; }
   .hero-title{ font-size: 36px; }
 }
+
+/* ---------------- SCREENSHOTS SECTION ---------------- */
+.screenshots {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 20px 0 16px;
+  margin: 0 auto 32px;
+  scroll-snap-type: x mandatory;
+}
+
+.screenshots img {
+  height: 520px;             
+  border-radius: 22px;       
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .screenshots img {
+    height: 440px;
+  }
+}
