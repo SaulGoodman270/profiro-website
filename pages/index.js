@@ -60,7 +60,7 @@ export default function Home() {
     {/* App Store badge */}
     <div className="store-badge">
       <a
-        href="https://apps.apple.com/"
+        href="https://apps.apple.com/app/id6753187157"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Download on the App Store"
@@ -150,7 +150,7 @@ export default function Home() {
           {/* Official App Store Badge */}
           <div style={{ marginTop: 12 }}>
             <a
-              href="https://apps.apple.com/"
+              href="https://apps.apple.com/app/id6753187157"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download on the App Store"

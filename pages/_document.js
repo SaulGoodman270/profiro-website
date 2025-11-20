@@ -13,6 +13,9 @@ export default function Document() {
         <link rel="icon" href="/favicon.v3.ico" sizes="any" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.v3.ico" type="image/x-icon" />
 
+        {/* Smart App Banner pro iOS — zobrazuje se automaticky nahoře v Safari */}
+        <meta name="apple-itunes-app" content="app-id=6753187157" />
+
         {/* Volitelně Pinned Tab (macOS Safari) – pokud máš monochrom. SVG loga */}
         {/* <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" /> */}
 
