@@ -72,7 +72,7 @@ export default function Post() {
         <p>
           🧭 <strong>Try it yourself:</strong> open the <em>Income & Savings Planner</em> in the Profiro
           app to see what your 75/15/10 split looks like.{" "}
-          <Link href="https://apps.apple.com/">Get it on the App Store</Link>
+          <Link href="https://apps.apple.com/app/id6753187157">Get it on the App Store</Link>
         </p>
       </main>
 

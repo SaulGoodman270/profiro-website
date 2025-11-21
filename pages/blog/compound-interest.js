@@ -72,7 +72,7 @@ export default function Post() {
         <p>
           👉 <strong>Try the Compound Interest Calculator</strong> inside the Profiro app and see how
           your own numbers grow.{" "}
-          <Link href="https://apps.apple.com/">Open in the App Store</Link>
+          <Link href="https://apps.apple.com/app/id6753187157">Open in the App Store</Link>
         </p>
       </main>
 

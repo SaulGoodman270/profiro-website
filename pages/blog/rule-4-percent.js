@@ -67,7 +67,7 @@ export default function Post() {
         <p>
           👉 <strong>Try our Financial Freedom Planner</strong> and calculate your own “Freedom Number”
           with real data.{" "}
-          <Link href="https://apps.apple.com/">Get it on the App Store</Link>
+          <Link href="https://apps.apple.com/app/id6753187157">Get it on the App Store</Link>
         </p>
       </main>
 
