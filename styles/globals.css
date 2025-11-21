@@ -85,14 +85,14 @@ code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  padding: 20px 0 16px;
-  margin: 0 auto 32px;
+  padding: 20px 0 12px;   /* ↓ původně 20px 0 16px */
+  margin: 0 auto 12px;    /* ↓ původně 0 auto 32px */
   scroll-snap-type: x mandatory;
 }
 
 .screenshots img {
-  height: 520px;             
-  border-radius: 22px;       
+  height: 520px;
+  border-radius: 22px;
   flex: 0 0 auto;
   scroll-snap-align: center;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
@@ -102,4 +102,9 @@ code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
   .screenshots img {
     height: 440px;
   }
+}
+
+/* Menší mezera nad sekcí "Why Profiro?" */
+#why {
+  margin-top: 8px;   /* defaultně je to větší, zbytečně to zvyšuje mezeru */
 }
