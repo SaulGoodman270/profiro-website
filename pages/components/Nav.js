@@ -3,13 +3,36 @@ import { useRouter } from 'next/router'
 
 export default function Nav() {
   const { pathname } = useRouter()
-  const is = p => pathname === p ? 'active' : ''
+
+  // Helper to check active state if we want to highlight link
+  // currently simply returning empty string or active class if needed
+  const isActive = (path) => pathname === path ? 'active' : ''
+
   return (
     <nav>
-      <Link className={is('/')} href="/">Profiro</Link>
-      <Link className={is('/blog')} href="/blog">Blog</Link>
-      <Link className={is('/terms')} href="/terms">Terms</Link>
-      <Link className={is('/privacy')} href="/privacy">Privacy</Link>
+      <div className="nav-inner">
+        <Link href="/" className="nav-logo">
+          {/* Logo Icon */}
+          <img src="/brand/profiro-logo-black.png" alt="Profiro Icon" />
+          <span>Profiro</span>
+        </Link>
+        <div className="nav-links">
+          {/* On Landing Page (#links) vs Subpages (/links) */}
+          {pathname === '/' ? (
+            <>
+              <Link href="#features">Features</Link>
+              <Link href="/blog">Blog</Link>
+              <Link href="#faq">FAQ</Link>
+            </>
+          ) : (
+            <>
+              <Link href="/#features">Features</Link>
+              <Link href="/blog">Blog</Link>
+              <Link href="/#faq">FAQ</Link>
+            </>
+          )}
+        </div>
+      </div>
     </nav>
   )
 }

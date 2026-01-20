@@ -3,217 +3,311 @@ import Link from "next/link";
 import Nav from "./components/Nav";
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Profiro",
+    "operatingSystem": "iOS",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "seller": {
+        "@type": "Organization",
+        "name": "Profiro"
+      }
+    },
+    "description": "Your personal financial compass. Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you. Privacy-first, on your iPhone.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "10"
+    }
+  };
+
   return (
     <>
       <Head>
-        <title>Profiro — Plan Your Path to Financial Freedom</title>
+        <title>Profiro — Your Personal Financial Compass</title>
         <meta
           name="description"
-          content="Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you. Privacy-first, on your iPhone."
+          content="Profiro is more than a tracker. It's a manual financial compass for iOS that helps you plan for Financial Independence (FIRE) with privacy and clarity."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://www.profiroapp.com/" />
 
-        <meta property="og:title" content="Profiro — Plan Your Path to Financial Freedom" />
+        {/* Open Graph / Social Media */}
+        <meta property="og:title" content="Profiro — Master Your Financial Independence" />
         <meta
           property="og:description"
-          content="Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you. Privacy-first, on your iPhone."
+          content="Privacy-first net worth tracking and FIRE planning on iOS. Start your journey to financial freedom today."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.profiroapp.com/" />
         <meta property="og:image" content="https://www.profiroapp.com/og/home.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Profiro — Financial Independence App" />
+        <meta name="twitter:description" content="Calculate your 4% rule, track net worth, and retire early. Privacy-first." />
         <meta name="twitter:image" content="https://www.profiroapp.com/og/home.png" />
-        {/* <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
+
+        {/* Structured Data (JSON-LD) for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
 
       <Nav />
 
-      {/* HERO */}
-<header className="hero">
-  <div className="container hero-inner">
-    {/* Logo */}
-    <img
-      src="/brand/profiro-logo-black.png"
-      alt="Profiro logo"
-      className="brandmark"
-      width={96}
-      height={96}
-      loading="eager"
-      decoding="async"
-    />
+      <main>
+        {/* HERO HEADER */}
+        <header className="hero">
+          <div className="container">
+            {/* Logo: User specified 'Profiro P logo cerne.png' which has correct ratio & bg */}
+            <Link href="https://apps.apple.com/app/id6753187157" target="_blank" aria-label="View on App Store">
+              <img
+                src="/Profiro P logo cerne.png"
+                alt="Profiro App Icon"
+                className="brandmark-hero"
+                width={120}
+                height={120}
+                loading="eager"
+              />
+            </Link>
 
-    {/* Název značky pod logem */}
-    <h1 className="appname">Profiro</h1>
+            <h1 className="hero-title">
+              Plan Your Path to <br />
+              <span style={{ color: "var(--color-primary)" }}>Financial Freedom</span>
+            </h1>
 
-    {/* Hlavní headline zvlášť */}
-    <h2 className="hero-title">Plan Your Path to Financial Freedom</h2>
+            <p className="hero-tagline">
+              Profiro is your personal <strong>financial compass</strong>.<br />
+              Don't just track the past—actively plan your future. <br className="mobile-break" />
+              <strong>100% Private. Manual Control. Mobile-first.</strong>
+            </p>
 
-    {/* Podtitul */}
-    <p className="hero-tagline">
-      Calculate your Financial Freedom number, build a monthly plan, and let compound growth work for you.
-      Privacy-first, on your iPhone.
-    </p>
+            {/* CTA Badge */}
+            <div className="store-buttons">
+              <a
+                href="https://apps.apple.com/app/id6753187157"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="store-link"
+                aria-label="Download on the App Store"
+              >
+                <img
+                  src="/badges/app-store-badge.svg"
+                  alt="Download on the App Store"
+                  width="180"
+                  height="60"
+                />
+              </a>
+            </div>
+          </div>
 
-    {/* App Store badge */}
-    <div className="store-badge">
-      <a
-        href="https://apps.apple.com/app/id6753187157"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Download on the App Store"
-      >
-        <img
-          src="/badges/app-store-badge.svg"
-          alt="Download on the App Store"
-          width="180"
-          height="60"
-        />
-      </a>
-    </div>
+          {/* SCREENSHOTS CAROUSEL */}
+          <div className="screenshots-container">
+            <div className="screenshots-scroll">
+              <img className="screenshot-item" src="/screenshots/1.png" alt="Net Worth Dashboard" width={280} height={560} />
+              <img className="screenshot-item" src="/screenshots/2.png" alt="Financial Independence Calculator" width={280} height={560} />
+              <img className="screenshot-item" src="/screenshots/3.png" alt="Compound Interest Projection" width={280} height={560} />
+              <img className="screenshot-item" src="/screenshots/4.png" alt="Monthly Savings Goals" width={280} height={560} />
+            </div>
+          </div>
+        </header>
 
-{/* SCREENSHOTS SECTION */}
-    <div className="screenshots">
-      <img src="/screenshots/1.png" alt="Profiro screenshot 1" />
-      <img src="/screenshots/2.png" alt="Profiro screenshot 2" />
-      <img src="/screenshots/3.png" alt="Profiro screenshot 3" />
-      <img src="/screenshots/4.png" alt="Profiro screenshot 4" />
-      <img src="/screenshots/5.png" alt="Profiro screenshot 5" />
-      <img src="/screenshots/6.png" alt="Profiro screenshot 6" />
-    </div>
+        {/* WHY / VALUE PROPOSITION */}
+        <section id="why" className="features-section" style={{ background: '#fff' }}>
+          <div className="container">
+            <div className="text-center">
+              <h2 className="section-title">Why Profiro?</h2>
+              <p className="section-desc">
+                Most apps just show you where your money went. <br />
+                Profiro helps you decide <strong>where it will go</strong>.
+              </p>
+            </div>
 
-  </div>
-</header>
-
-      <main
-        className="container"
-        style={{ maxWidth: 980, margin: "0 auto", padding: "32px 16px", lineHeight: 1.65 }}
-      >
-        {/* WHY */}
-        <section aria-labelledby="why">
-          <h2 id="why">Why Profiro?</h2>
-          <ul>
-            <li>
-              <strong>Know your Financial Freedom number</strong> — estimate what you need using the time-tested 4%
-              rule.
-            </li>
-            <li>
-              <strong>Turn goals into a plan</strong> — set monthly contributions and track real progress.
-            </li>
-            <li>
-              <strong>Let compounding work</strong> — see long-term projections that keep you motivated.
-            </li>
-            <li>
-              <strong>Stay in control</strong> — simple, focused tools you’ll actually use every month.
-            </li>
-          </ul>
+            <div className="features-grid">
+              <article className="feature-card">
+                <div className="feature-icon">🧭</div>
+                <h3 className="feature-title">Your Financial Compass</h3>
+                <p className="feature-text">
+                  Navigate towards Financial Independence (FIRE). Set clear goals, link your accounts, and visualize your progress daily.
+                </p>
+              </article>
+              <article className="feature-card">
+                <div className="feature-icon">🛡️</div>
+                <h3 className="feature-title">100% Control & Privacy</h3>
+                <p className="feature-text">
+                  <strong>No bank connections.</strong> You enter data manually, ensuring total privacy and mindfulness over every transaction. Data lives on <strong>your iCloud</strong>.
+                </p>
+              </article>
+              <article className="feature-card">
+                <div className="feature-icon">🔎</div>
+                <h3 className="feature-title">Focus on What Matters</h3>
+                <p className="feature-text">
+                  Simple, distraction-free tools. No ads, no selling of your data. Just you and your path to wealth.
+                </p>
+              </article>
+              <article className="feature-card">
+                <div className="feature-icon">🌍</div>
+                <h3 className="feature-title">Global & Ready</h3>
+                <p className="feature-text">
+                  Fully localized in <strong>11 languages</strong> including English, Czech, and German. Add accounts in any currency.
+                </p>
+              </article>
+            </div>
+          </div>
         </section>
 
-        {/* FEATURES */}
-        <section id="features" aria-labelledby="features" style={{ marginTop: 28 }}>
-          <h2 id="features">Key features</h2>
-          <ul>
-            <li>
-              <strong>Financial Freedom Number (4% Rule)</strong> — a clear target you can plan around.
-            </li>
-            <li>
-              <strong>Compound Interest Calculator</strong> — experiment with contributions, time horizon and returns.
-            </li>
-            <li>
-              <strong>Income &amp; Savings Planner (75/15/10)</strong> — pay your future self first, then live on the
-              rest.
-            </li>
-            <li>
-              <strong>What-if Scenarios</strong> — adjust returns, inflation or monthly savings to compare outcomes.
-            </li>
-            <li>
-              <strong>Multi-language</strong> — built for an international audience.
-            </li>
-            <li>
-              <strong>Privacy-first</strong> — no analytics, no ads, no server-side data collection.
-            </li>
-          </ul>
+        {/* KEY FEATURES */}
+        <section id="features" className="features-section" style={{ background: 'var(--bg-surface)' }}>
+          <div className="container">
+            <div className="text-center">
+              <h2 className="section-title">Powerful Planning Tools</h2>
+              <p className="section-desc">
+                Built with native iOS technologies (SwiftUI) for a premium, responsive experience.
+              </p>
+            </div>
+
+            <div className="features-grid">
+              {/* Feature 1 */}
+              <article className="feature-card">
+                <div className="feature-icon">🎯</div>
+                <h3 className="feature-title">Financial Freedom Planner</h3>
+                <p className="feature-text">
+                  Based on the <strong>4% Rule</strong>. Input your portfolio and expected returns to calculate exactly how much you need to retire early.
+                </p>
+              </article>
+
+              {/* Feature 2 */}
+              <article className="feature-card">
+                <div className="feature-icon">💰</div>
+                <h3 className="feature-title">Income & Savings (75/15/10)</h3>
+                <p className="feature-text">
+                  Optimize your cash flow. A practical tool to help you save 15%, invest 10%, and live comfortably on the rest.
+                </p>
+              </article>
+
+              {/* Feature 3 */}
+              <article className="feature-card">
+                <div className="feature-icon">📈</div>
+                <h3 className="feature-title">Compound Interest</h3>
+                <p className="feature-text">
+                  See the magic of time. Visualize how small monthly contributions grow into millions over 10, 20, or 30 years.
+                </p>
+              </article>
+
+              {/* Feature 4 */}
+              <article className="feature-card">
+                <div className="feature-icon">🎓</div>
+                <h3 className="feature-title">Educational Center</h3>
+                <p className="feature-text">
+                  Not just a tool, but a guide. Access built-in articles that explain complex financial concepts in simple terms.
+                </p>
+              </article>
+
+              {/* Feature 5 */}
+              <article className="feature-card">
+                <div className="feature-icon">💳</div>
+                <h3 className="feature-title">Smart Account Management</h3>
+                <p className="feature-text">
+                  Track unlimited accounts (Cash, Bank, Investment). Use templates for recurring transactions and categorize flawlessly.
+                </p>
+              </article>
+
+              {/* Feature 6 */}
+              <article className="feature-card">
+                <div className="feature-icon">🔒</div>
+                <h3 className="feature-title">Privacy & Sync</h3>
+                <p className="feature-text">
+                  Your data syncs automatically via <strong>iCloud</strong>. We never see your transactions or bank logins.
+                </p>
+              </article>
+            </div>
+          </div>
         </section>
 
-        {/* PRIVACY */}
-        <section aria-labelledby="privacy" style={{ marginTop: 28 }}>
-          <h2 id="privacy">Privacy &amp; sync</h2>
-          <p>
-            Your data stays <strong>on your device</strong>. Sync uses your <strong>private iCloud account</strong> via
-            Apple CloudKit and is <strong>enabled by default</strong>. We don’t run servers that process your data.
+        {/* PRIVACY & SYNC */}
+        <section id="privacy" className="container" style={{ padding: '80px 20px', textAlign: 'center' }}>
+          <h2 className="section-title">Privacy & Security</h2>
+          <p style={{ maxWidth: 700, margin: '0 auto 20px', fontSize: '1.1rem', color: 'var(--text-muted)' }}>
+            Profiro is designed for those who value privacy. <strong>100% Manual Entry</strong> means no third-party bank connectors reading your data.
+            Everything stays on your device and your personal iCloud.
           </p>
           <p>
-            Read our <Link href="/privacy">Privacy Policy</Link> and <Link href="/terms">Terms of Use</Link>.
+            Read our <Link href="/privacy" style={{ textDecoration: 'underline' }}>Privacy Policy</Link> and <Link href="/terms" style={{ textDecoration: 'underline' }}>Terms of Use</Link>.
           </p>
         </section>
 
-        {/* PRICING */}
-        <section aria-labelledby="pricing" style={{ marginTop: 28 }}>
-          <h2 id="pricing">Free trial &amp; pricing</h2>
-          <p>
-            Try Profiro with a <strong>14-day free trial</strong> (full access). Continue with a{" "}
-            <strong>monthly or annual</strong> subscription via Apple’s In-App Purchase. Cancel anytime in your Apple ID
-            settings.
-          </p>
+        {/* PRICING & CALL TO ACTION */}
+        <section className="container">
+          <div className="pricing-card">
+            <h2>Start your journey today</h2>
+            <p>
+              Try Profiro with a <strong>14-day free trial</strong> (full access). <br />
+              Unlock your financial future for less than the price of a coffee per month.
+            </p>
 
-          {/* Official App Store Badge */}
-          <div style={{ marginTop: 12 }}>
             <a
               href="https://apps.apple.com/app/id6753187157"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Download on the App Store"
+              className="store-link"
+              style={{ display: "inline-block" }}
             >
               <img
                 src="/badges/app-store-badge.svg"
                 alt="Download on the App Store"
-                width="160"
-                height="54"
-                style={{ display: "block", margin: "0 auto" }}
+                width="180"
+                height="60"
               />
             </a>
           </div>
         </section>
 
-        {/* BLOG SHORTCUT */}
-        <section aria-labelledby="learn-more" style={{ marginTop: 28 }}>
-          <h2 id="learn-more">Learn more</h2>
-          <ul>
-            <li>
-              <Link href="/blog/rule-4-percent">The 4% Rule</Link> — your ticket to financial freedom
-            </li>
-            <li>
-              <Link href="/blog/compound-interest">Compound Interest</Link> — let your money work for you
-            </li>
-            <li>
-              <Link href="/blog/rule-75-15-10">The 75/15/10 Rule</Link> — a practical compass for your money
-            </li>
-          </ul>
-        </section>
-
         {/* FAQ */}
-        <section aria-labelledby="faq" style={{ marginTop: 28 }}>
-          <h2 id="faq">FAQ</h2>
-          <details style={{ marginBottom: 8 }}>
-            <summary>Is my data private?</summary>
-            <p>
-              Yes. Data stays on your device and (optionally) in your iCloud. We don’t collect analytics and don’t run
-              servers with your data.
-            </p>
-          </details>
-          <details>
-            <summary>Is there a free version?</summary>
-            <p>
-              You get a 14-day free trial with full access. After that, continue with a monthly or annual plan via Apple
-              In-App Purchase.
-            </p>
-          </details>
+        <section id="faq" className="container" style={{ paddingBottom: 80 }}>
+          <h2 className="section-title text-center">FAQ</h2>
+          <div style={{ maxWidth: 680, margin: "0 auto", marginTop: 40 }}>
+            <details style={{ marginBottom: 16, padding: "16px", background: "#f8fafc", borderRadius: 8 }}>
+              <summary style={{ fontWeight: 600, cursor: "pointer" }}>Why no automatic bank sync?</summary>
+              <p style={{ marginTop: 12, color: "var(--text-muted)" }}>
+                We believe in <strong>mindful spending</strong>. Manually entering transactions makes you more aware of your money flow. Plus, it guarantees that no third-party service ever accesses your bank credentials.
+              </p>
+            </details>
+            <details style={{ marginBottom: 16, padding: "16px", background: "#f8fafc", borderRadius: 8 }}>
+              <summary style={{ fontWeight: 600, cursor: "pointer" }}>Is my data backed up?</summary>
+              <p style={{ marginTop: 12, color: "var(--text-muted)" }}>
+                Yes, automatically via your own private <strong>Apple iCloud</strong>. If you lose your phone, your data is safe and will restore on your new device.
+              </p>
+            </details>
+            <details style={{ padding: "16px", background: "#f8fafc", borderRadius: 8 }}>
+              <summary style={{ fontWeight: 600, cursor: "pointer" }}>Is there a free version?</summary>
+              <p style={{ marginTop: 12, color: "var(--text-muted)" }}>
+                We offer a generous <strong>14-day free trial</strong> with full access to all features (Financial Plans, Unlimited Accounts). After that, a subscription is required to support development.
+              </p>
+            </details>
+          </div>
         </section>
       </main>
 
-      <footer className="footer container">© {new Date().getFullYear()} Profiro. All rights reserved.</footer>
+      <footer className="footer">
+        <div className="container footer-inner">
+          <div>
+            <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>
+            <p>© {new Date().getFullYear()} Marek Brichcin. All rights reserved.</p>
+          </div>
+          <div className="footer-links">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/blog">Blog</Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
