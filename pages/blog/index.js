@@ -6,6 +6,7 @@ const posts = [
   {
     slug: "rule-4-percent",
     title: "The 4% Rule: Your Ticket to Financial Freedom",
+    image: "/blog_pictures/4-percent-rule.jpg",
     excerpt: "A simple formula to estimate how much you need to retire and reach financial independence.",
     date: "2025-10-20",
   },
@@ -45,11 +46,20 @@ export default function BlogIndex() {
 
         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
           {posts.map((p) => (
-            <li key={p.slug} style={{ marginBottom: 24 }}>
-              <h2 style={{ margin: "0 0 6px" }}>
+            <li key={p.slug} style={{ marginBottom: 48 }}>
+              {p.image && (
+                <div style={{ marginBottom: 16, borderRadius: 12, overflow: "hidden" }}>
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    style={{ width: "100%", height: "auto", display: "block", maxHeight: 300, objectFit: "cover" }}
+                  />
+                </div>
+              )}
+              <h2 style={{ margin: "0 0 8px" }}>
                 <Link href={`/blog/${p.slug}`}>{p.title}</Link>
               </h2>
-              <p style={{ margin: "6px 0 4px", color: "#475569" }}>{p.excerpt}</p>
+              <p style={{ margin: "6px 0 8px", color: "#475569" }}>{p.excerpt}</p>
               <p style={{ margin: 0, fontSize: 13, color: "#64748b" }}>
                 {new Date(p.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -63,7 +73,7 @@ export default function BlogIndex() {
       </main>
 
       {/* FIXED Footer structure for full width background */}
-      <footer className="footer">
+      <footer className="footer footer-force-full">
         <div className="container footer-inner">
           <div>
             <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>

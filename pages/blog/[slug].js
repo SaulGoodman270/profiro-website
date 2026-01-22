@@ -6,6 +6,7 @@ import Link from 'next/link'
 const content = {
   'rule-4-percent': {
     title: 'The 4% Rule: Your Ticket to Financial Freedom',
+    image: '/blog_pictures/4-percent-rule.jpg',
     body: `The 4% rule is a common rule of thumb used to determine how much a retiree should withdraw from a retirement account each year. This rule seeks to provide a steady income stream to the retiree while also maintaining an account balance that keeps income flowing through retirement.
 
     Profiro helps you estimate your FI number, plan monthly contributions, and visualize your timeline so you can make informed decisions.`
@@ -40,6 +41,15 @@ export default function Post() {
       </Head>
       <Nav />
       <main className="container" style={{ padding: "40px 20px" }}>
+        {post.image && (
+          <div style={{ marginBottom: "32px", borderRadius: "16px", overflow: "hidden" }}>
+            <img
+              src={post.image}
+              alt={post.title}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        )}
         <h1 style={{ marginBottom: "24px" }}>{post.title}</h1>
         <div style={{ whiteSpace: "pre-line", color: "var(--text-main)", maxWidth: "700px" }}>
           {post.body}
@@ -49,8 +59,8 @@ export default function Post() {
         </div>
       </main>
 
-      {/* FIXED Footer structure for full width background */}
-      <footer className="footer">
+      {/* Footer with forced full-width hack in case of parent constraints */}
+      <footer className="footer footer-force-full">
         <div className="container footer-inner">
           <div>
             <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>
