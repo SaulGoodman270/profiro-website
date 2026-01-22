@@ -62,8 +62,19 @@ export default function BlogIndex() {
         </ul>
       </main>
 
-      <footer className="footer container">
-        © {new Date().getFullYear()} Profiro. All rights reserved.
+      {/* FIXED Footer structure for full width background */}
+      <footer className="footer">
+        <div className="container footer-inner">
+          <div>
+            <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>
+            <p>© {new Date().getFullYear()} Marek Brichcin. All rights reserved.</p>
+          </div>
+          <div className="footer-links">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/blog">Blog</Link>
+          </div>
+        </div>
       </footer>
     </>
   );

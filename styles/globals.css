@@ -41,6 +41,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  /* Ensure full height for sticky footer */
+}
+
 body {
   margin: 0;
   font-family: var(--font-main);
@@ -49,6 +55,23 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Sticky Footer Layout Fix */
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  /* Grow to fill space, pushing footer down */
+}
+
+footer {
+  flex-shrink: 0;
+}
+
 
 h1,
 h2,
@@ -107,10 +130,8 @@ ul {
 
 /* Navigation */
 nav {
-  /* Sticky & Glassmorphism */
   display: flex;
   justify-content: center;
-  /* Center the inner wrapper */
   padding: 16px 0;
   border-bottom: 1px solid #f1f5f9;
   background: rgba(255, 255, 255, 0.9);
@@ -127,7 +148,6 @@ nav {
   padding: 0 20px;
   align-items: center;
   justify-content: space-between;
-  /* Ensures logo left, links right */
 }
 
 .nav-logo {
@@ -138,7 +158,6 @@ nav {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  /* Removed accent color underline default */
 }
 
 .nav-logo img {
@@ -148,7 +167,6 @@ nav {
 
 .nav-logo span {
   color: var(--color-primary);
-  /* Ensure brand name is dark */
 }
 
 .nav-links {
@@ -171,14 +189,13 @@ nav {
   padding: 80px 0 60px;
   text-align: center;
   background: linear-gradient(180deg, #fff 0%, var(--bg-surface) 100%);
+  overflow: hidden;
 }
 
-/* Used for the standalone hero logo image */
 .brandmark-hero {
   display: block;
   margin: 0 auto 24px;
   border-radius: 26px;
-  /* Smooth corners */
   box-shadow: var(--shadow-lg);
   transition: transform 0.2s;
 }
@@ -186,7 +203,6 @@ nav {
 .brandmark-hero:hover {
   transform: scale(1.02);
 }
-
 
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -222,37 +238,131 @@ nav {
   opacity: 0.9;
 }
 
-/* Screenshots / Mockups */
+/* --------------------------------------------------------- */
+/* PREMIUM SCREENSHOT CAROUSEL DESIGN                        */
+/* --------------------------------------------------------- */
+
 .screenshots-container {
-  margin-top: -20px;
-  overflow: hidden;
+  margin-top: 0px;
   padding-bottom: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  /* Anchor for navigation buttons */
+
+  /* Soft fade mask */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
 .screenshots-scroll {
   display: flex;
-  gap: 24px;
-  padding: 24px 20px;
+  justify-content: flex-start;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  justify-content: flex-start;
+  gap: 32px;
+  padding: 40px 48px;
+  scroll-behavior: smooth;
+  /* Smooth scrolling for JS calls too, though JS uses explicit behavior */
 }
 
-@media (min-width: 768px) {
-  .screenshots-scroll {
-    justify-content: center;
-  }
+/* Hide scrollbar */
+.screenshots-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.screenshots-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .screenshot-item {
   flex: 0 0 auto;
-  width: 280px;
+  height: 520px;
+  width: auto;
   scroll-snap-align: center;
-  border-radius: 32px;
-  border: 4px solid #fff;
-  box-shadow: var(--shadow-premium);
+  border-radius: 36px;
+  border: 6px solid #fff;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
+
+.screenshot-item:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* CAROUSEL NAVIGATION ARROWS */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  /* Glass feel */
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.carousel-arrow:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .screenshots-container {
+    max-width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .screenshots-scroll {
+    padding: 24px 32px;
+    gap: 24px;
+  }
+
+  .screenshot-item {
+    height: 420px;
+    border-width: 4px;
+  }
+
+  /* Hide arrows on mobile/touch devices */
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------- */
+
 
 /* Features Grid */
 .features-section {
@@ -286,15 +396,12 @@ nav {
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid #f1f5f9;
   height: 100%;
-  /* Equal height cards */
 }
 
 .features-section .feature-card {
-  /* If inside a section with white bg, make card surface bg */
   background: var(--bg-surface);
 }
 
-/* If section has surface bg, make card white */
 section[style*="var(--bg-surface)"] .feature-card {
   background: #fff;
 }
@@ -312,7 +419,6 @@ section[style*="var(--bg-surface)"] .feature-card {
   display: inline-block;
   padding: 12px;
   background: #fff;
-  /* Default white icon bg */
   border-radius: 12px;
   box-shadow: var(--shadow-sm);
 }
@@ -354,11 +460,15 @@ section[style*="var(--bg-surface)"] .feature-card {
 
 /* Footer */
 .footer {
+  width: 100%;
+  /* Ensure footer takes full width */
   background: #f8fafc;
   padding: 60px 0 30px;
   border-top: 1px solid #e2e8f0;
   font-size: 0.9rem;
   color: var(--text-muted);
+  margin-top: auto;
+  /* Push to bottom if using flex container */
 }
 
 .footer-inner {

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Nav from "./components/Nav";
+import { useRef } from "react";
 
 export default function Home() {
   const structuredData = {
@@ -23,6 +24,21 @@ export default function Home() {
       "@type": "AggregateRating",
       "ratingValue": "5",
       "reviewCount": "10"
+    }
+  };
+
+  // Carousel Logic
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -340, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 340, behavior: "smooth" });
     }
   };
 
@@ -66,7 +82,6 @@ export default function Home() {
         {/* HERO HEADER */}
         <header className="hero">
           <div className="container">
-            {/* Logo: User specified 'Profiro P logo cerne.png' which has correct ratio & bg */}
             <Link href="https://apps.apple.com/app/id6753187157" target="_blank" aria-label="View on App Store">
               <img
                 src="/Profiro P logo cerne.png"
@@ -110,12 +125,23 @@ export default function Home() {
 
           {/* SCREENSHOTS CAROUSEL */}
           <div className="screenshots-container">
-            <div className="screenshots-scroll">
-              <img className="screenshot-item" src="/screenshots/1.png" alt="Net Worth Dashboard" width={280} height={560} />
-              <img className="screenshot-item" src="/screenshots/2.png" alt="Financial Independence Calculator" width={280} height={560} />
-              <img className="screenshot-item" src="/screenshots/3.png" alt="Compound Interest Projection" width={280} height={560} />
-              <img className="screenshot-item" src="/screenshots/4.png" alt="Monthly Savings Goals" width={280} height={560} />
+            {/* Nav Arrows */}
+            <button className="carousel-arrow arrow-left" onClick={scrollLeft} aria-label="Scroll left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+            </button>
+
+            <div className="screenshots-scroll" ref={scrollRef}>
+              <img className="screenshot-item" src="/screenshots/1.png" alt="Net Worth Dashboard" />
+              <img className="screenshot-item" src="/screenshots/2.png" alt="Financial Independence Calculator" />
+              <img className="screenshot-item" src="/screenshots/3.png" alt="Compound Interest Projection" />
+              <img className="screenshot-item" src="/screenshots/4.png" alt="Monthly Savings Goals" />
+              <img className="screenshot-item" src="/screenshots/5.png" alt="Account Management" />
+              <img className="screenshot-item" src="/screenshots/6.png" alt="Secure Privacy" />
             </div>
+
+            <button className="carousel-arrow arrow-right" onClick={scrollRight} aria-label="Scroll right">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+            </button>
           </div>
         </header>
 
