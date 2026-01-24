@@ -13,6 +13,7 @@ const posts = [
   {
     slug: "compound-interest",
     title: "Compound Interest: Let Your Money Work for You",
+    image: "/blog_pictures/compound-interest.png",
     excerpt: "Discover the snowball effect that turns small amounts into great wealth over time.",
     date: "2025-10-20",
   },

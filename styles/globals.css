@@ -507,11 +507,9 @@ section[style*="var(--bg-surface)"] .feature-card {
 /* Force full width breakout for sticky situations or constrained parents */
 .footer-force-full {
   width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: 100vw;
 }
 
 .footer-links a {

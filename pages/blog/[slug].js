@@ -13,6 +13,7 @@ const content = {
   },
   'compound-interest': {
     title: 'Compound Interest: Let Your Money Work for You',
+    image: '/blog_pictures/compound-interest.png',
     body: `Compound interest is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods.
     
     Profiro lets you visualize this snowball effect. See how small contributions today can turn into massive wealth over decades.`
@@ -30,8 +31,9 @@ const content = {
 
 export default function Post() {
   const { query } = useRouter()
-  const slug = query.slug
-  const post = content[slug] || { title: 'Post not found', body: 'This post does not exist yet.' }
+  // Ensure slug is a string and trim whitespace just in case
+  const slug = typeof query.slug === 'string' ? query.slug.trim() : query.slug
+  const post = content[slug] || { title: 'Post not found', body: 'This post does not exist yet.', image: null }
 
   return (
     <>
@@ -42,11 +44,12 @@ export default function Post() {
       <Nav />
       <main className="container" style={{ padding: "40px 20px" }}>
         {post.image && (
-          <div style={{ marginBottom: "32px", borderRadius: "16px", overflow: "hidden" }}>
+          <div key={post.image} style={{ marginBottom: "32px", borderRadius: "16px", overflow: "hidden", lineHeight: 0 }}>
+            {/* Using standard img tag with explicitly ensure display block */}
             <img
               src={post.image}
               alt={post.title}
-              style={{ width: "100%", height: "auto", display: "block" }}
+              style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
             />
           </div>
         )}
@@ -59,7 +62,8 @@ export default function Post() {
         </div>
       </main>
 
-      {/* Footer with forced full-width hack in case of parent constraints */}
+      {/* Footer - attempting natural full flow with negative margin breakout as fallback if needed, 
+          but primarily relying on global CSS adjustments */}
       <footer className="footer footer-force-full">
         <div className="container footer-inner">
           <div>
