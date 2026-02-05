@@ -11,10 +11,14 @@ export default function Nav() {
   return (
     <nav>
       <div className="nav-inner">
-        <Link href="/" className="nav-logo">
+        <Link href="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           {/* Logo Icon */}
-          <img src="/brand/profiro-logo-black.png" alt="Profiro Icon" />
-          <span>Profiro</span>
+          <img
+            src="/Profiro P logo cerne.png"
+            alt="Profiro Icon"
+            style={{ width: '30px', height: '30px', objectFit: 'contain', borderRadius: '8px' }}
+          />
+          <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#0f172a' }}>Profiro</span>
         </Link>
         <div className="nav-links">
           {/* On Landing Page (#links) vs Subpages (/links) */}
