@@ -100,7 +100,7 @@ export default function Home() {
               </h1>
 
               <img
-                src="/ilustracni-obrazky/hero-section-picture.png"
+                src="/ilustracni-obrazky/hero-section-picture.PNG"
                 alt="Tired of working just to pay the bills"
                 style={{
                   width: '100%',
@@ -286,7 +286,7 @@ export default function Home() {
                   borderRadius: '16px',
                   padding: '0'
                 }}>
-                  <img src="/ilustracni-obrazky/Rat-Race.PNG" alt="Rat Race" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src="/ilustracni-obrazky/Rat-Race.png" alt="Rat Race" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <h3 className="feature-title">The Rat Race</h3>
                 <p className="feature-text text-slate-600">
@@ -325,7 +325,7 @@ export default function Home() {
                   borderRadius: '16px',
                   padding: '8px'
                 }}>
-                  <img src="/ilustracni-obrazky/Dead-End.PNG" alt="The Dead End" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src="/ilustracni-obrazky/Dead-End.png" alt="The Dead End" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                 </div>
                 <h3 className="feature-title">The Dead End</h3>
                 <p className="feature-text text-slate-600">
