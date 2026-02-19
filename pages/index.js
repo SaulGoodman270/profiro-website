@@ -72,7 +72,7 @@ export default function Home() {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.profiroapp.com/" />
-        <meta property="og:image" content="https://www.profiroapp.com/og/home.png" />
+        <meta property="og:image" content="https://www.profiroapp.com/ilustracni-obrazky/Financial-Freedom-Planner.PNG" />
 
         {/* Structured Data (JSON-LD) for SEO */}
         <script

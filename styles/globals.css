@@ -11,10 +11,10 @@
   /* Slate 900 */
   --color-primary-light: #334155;
   /* Slate 700 */
-  --color-accent: #d97706;
-  /* Amber 600 */
-  --color-accent-hover: #b45309;
-  /* Amber 700 */
+  --color-accent: #2563eb;
+  /* Royal Blue (Blue 600) */
+  --color-accent-hover: #1d4ed8;
+  /* Darker Blue (Blue 700) */
 
   --bg-body: #ffffff;
   --bg-surface: #f8fafc;
@@ -1428,6 +1428,7 @@ details[open] summary::after {
     padding-right: 0;
   }
 }
+
 /* --- BLOG ARTICLE STYLING --- */
 .blog-article {
   max-width: 800px !important;
@@ -1472,7 +1473,8 @@ details[open] summary::after {
   line-height: 1.7;
 }
 
-.blog-article ul, .blog-article ol {
+.blog-article ul,
+.blog-article ol {
   margin-bottom: 1.75rem;
   padding-left: 1.5rem;
 }
@@ -1521,4 +1523,14 @@ details[open] summary::after {
 
 .legal-document a {
   text-decoration: underline;
+}
+
+/* BLOG INDEX SPECIFIC */
+.blog-post-title a {
+  color: var(--color-primary) !important;
+  transition: color 0.2s ease;
+}
+
+.blog-post-title a:hover {
+  color: var(--color-accent) !important;
 }

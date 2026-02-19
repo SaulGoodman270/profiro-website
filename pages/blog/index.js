@@ -60,7 +60,7 @@ export default function BlogIndex() {
                   </Link>
                 </div>
               )}
-              <h2 style={{ margin: "0 0 8px" }}>
+              <h2 className="blog-post-title" style={{ margin: "0 0 8px" }}>
                 <Link href={`/blog/${p.slug}`}>{p.title}</Link>
               </h2>
               <p style={{ margin: "6px 0 8px", color: "#475569" }}>{p.excerpt}</p>
