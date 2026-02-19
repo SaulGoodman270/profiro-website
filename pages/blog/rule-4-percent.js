@@ -6,12 +6,46 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>The 4% Rule — Profiro</title>
+        <title>The 4% Rule: How Much Do You Need to Retire? — Profiro</title>
         <meta
           name="description"
-          content="The 4% Rule: a simple way to estimate how much you need for financial independence."
+          content="Calculate your financial independence number using the 4% Rule. Learn how much you need to save to retire early and live off your investments."
         />
         <link rel="canonical" href="https://www.profiroapp.com/blog/rule-4-percent" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="The 4% Rule: Your Ticket to Financial Freedom" />
+        <meta property="og:description" content="A simple formula to estimate how much you need to reach financial independence." />
+        <meta property="og:image" content="https://www.profiroapp.com/blog_pictures/4-percent-rule.jpg" />
+        <meta property="og:url" content="https://www.profiroapp.com/blog/rule-4-percent" />
+        <meta property="og:type" content="article" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "The 4% Rule: Your Ticket to Financial Freedom",
+              "image": "https://www.profiroapp.com/blog_pictures/4-percent-rule.jpg",
+              "datePublished": "2025-10-20",
+              "author": {
+                "@type": "Person",
+                "name": "Marek Brichcin"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Profiro",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.profiroapp.com/Profiro%20P%20logo%20cerne.png"
+                }
+              },
+              "description": "The 4% Rule: a simple way to estimate how much you need for financial independence."
+            })
+          }}
+        />
       </Head>
 
       <Nav />

@@ -6,12 +6,46 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>The 75/15/10 Rule — Profiro</title>
+        <title>The 75/15/10 Rule: Simple Budgeting for FIRE — Profiro</title>
         <meta
           name="description"
-          content="A simple budgeting rule: 15% investing, 10% saving, 75% living. A practical compass for your money."
+          content="Master your finances with the 75/15/10 rule. Learn how to balance living expenses, investing for the future, and building a safety net."
         />
         <link rel="canonical" href="https://www.profiroapp.com/blog/rule-75-15-10" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="The 75/15/10 Rule: A Compass for Your Money" />
+        <meta property="og:description" content="A practical budgeting system — 15% investing, 10% saving, 75% living." />
+        <meta property="og:image" content="https://www.profiroapp.com/blog_pictures/The-75-15-10-rule.png" />
+        <meta property="og:url" content="https://www.profiroapp.com/blog/rule-75-15-10" />
+        <meta property="og:type" content="article" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "The 75/15/10 Rule: A Compass for Your Money",
+              "image": "https://www.profiroapp.com/blog_pictures/The-75-15-10-rule.png",
+              "datePublished": "2025-10-20",
+              "author": {
+                "@type": "Person",
+                "name": "Marek Brichcin"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Profiro",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.profiroapp.com/Profiro%20P%20logo%20cerne.png"
+                }
+              },
+              "description": "A practical budgeting system — 15% investing, 10% saving, 75% living."
+            })
+          }}
+        />
       </Head>
 
       <Nav />

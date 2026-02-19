@@ -6,12 +6,46 @@ export default function Post() {
   return (
     <>
       <Head>
-        <title>Compound Interest — Profiro</title>
+        <title>Compound Interest: The Secret to Wealth Building — Profiro</title>
         <meta
           name="description"
-          content="Compound interest explained: how small amounts can grow into great wealth over time."
+          content="Understand how compound interest works and why starting early is the key to financial freedom. See real-world examples of wealth growth over time."
         />
         <link rel="canonical" href="https://www.profiroapp.com/blog/compound-interest" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Compound Interest: Let Your Money Work for You" />
+        <meta property="og:description" content="Discover the snowball effect that turns small amounts into great wealth over time." />
+        <meta property="og:image" content="https://www.profiroapp.com/blog_pictures/compound-interest.png" />
+        <meta property="og:url" content="https://www.profiroapp.com/blog/compound-interest" />
+        <meta property="og:type" content="article" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Compound Interest: Let Your Money Work for You",
+              "image": "https://www.profiroapp.com/blog_pictures/compound-interest.png",
+              "datePublished": "2025-10-20",
+              "author": {
+                "@type": "Person",
+                "name": "Marek Brichcin"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Profiro",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.profiroapp.com/Profiro%20P%20logo%20cerne.png"
+                }
+              },
+              "description": "Compound interest explained: how small amounts can grow into great wealth over time."
+            })
+          }}
+        />
       </Head>
 
       <Nav />
