@@ -268,36 +268,37 @@ export default function Home() {
                         </div>
 
                         <div className="bento-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-                            <article className="card-v2">
+                            <article className="card-v2" style={{ padding: '8px 32px 32px' }}>
                                 <div style={{
-                                    width: '200px',
-                                    height: '200px',
-                                    margin: '0 auto 20px',
+                                    width: '240px',
+                                    height: '240px',
+                                    margin: '0 auto 4px',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     background: '#ffffff',
                                     borderRadius: '16px',
-                                    padding: '16px'
+                                    padding: '0'
                                 }}>
                                     <img src="/ilustracni-obrazky/Rat-Race.PNG" alt="Rat Race" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                 </div>
                                 <h3 className="feature-title">The Rat Race</h3>
                                 <p className="feature-text text-slate-600">
-                                    You're earning, spending, and staring at an empty bank account every month. That knot in your stomach when the bills hit? Years slip by, and you're still chained to the treadmill.
+                                    You're earning, spending, and staring at an empty bank account every month. That knot in your stomach when the bills hit?
+                                    Years slip by, and you're still spinning in the same endless loop – exhausted, but no closer to escape.
                                 </p>
                             </article>
                             <article className="card-v2">
                                 <div style={{
-                                    width: '180px',
-                                    height: '180px',
+                                    width: '190px',
+                                    height: '190px',
                                     margin: '0 auto 20px',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     background: '#ffffff',
                                     borderRadius: '16px',
-                                    padding: '16px'
+                                    padding: '8px'
                                 }}>
                                     <img src="/ilustracni-obrazky/Fear-of-the-Future.PNG" alt="Fear of the Future" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                 </div>
@@ -308,15 +309,15 @@ export default function Home() {
                             </article>
                             <article className="card-v2">
                                 <div style={{
-                                    width: '180px',
-                                    height: '180px',
+                                    width: '200px',
+                                    height: '200px',
                                     margin: '0 auto 20px',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     background: '#ffffff',
                                     borderRadius: '16px',
-                                    padding: '16px'
+                                    padding: '8px'
                                 }}>
                                     <img src="/ilustracni-obrazky/Dead-End.PNG" alt="The Dead End" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                 </div>
@@ -340,7 +341,7 @@ export default function Home() {
                                 <span className="text-gradient">Start buying your freedom.</span>
                             </h2>
                             <p className="section-desc">
-                                Profiro turns your foggy dreams into a crystal-clear roadmap.
+                                Profiro turns your foggy dreams into a crystal-clear roadmap, empowering you to make choices that feel liberating.
                             </p>
                         </div>
 
@@ -362,6 +363,7 @@ export default function Home() {
                                 <p className="feature-text" style={{ color: '#ecfdf5' }}>
                                     You can’t reach a goal if you don’t know what it is.
                                     Did you know that the amount you need for financial freedom might be smaller than you think?
+                                    But unless you know your exact number, independence will forever stay a vague destination.
                                     Profiro calculates your path instantly.
                                 </p>
                             </article>
@@ -383,7 +385,8 @@ export default function Home() {
                                 <p className="feature-text" style={{ color: '#ecfdf5' }}>
                                     <strong>Why no bank sync?</strong> Automatic tracking is easy to ignore.
                                     Manual entry forces you to pay attention to every dollar.
-                                    This simple habit is the fastest way to regain control. It's that 'aha' moment.
+                                    This simple habit is the fastest way to regain control.
+                                    It's that 'aha' moment when you realize you're not just surviving – you're thriving.
                                 </p>
                             </article>
 
@@ -445,7 +448,7 @@ export default function Home() {
                             <span style={{ display: 'block', color: '#fff', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.9rem' }}>Features</span>
                             <h2 className="section-v2-title text-gradient-gold" style={{ marginTop: '8px' }}>Tools for Financial Independence</h2>
                             <p className="section-desc" style={{ color: '#ecfdf5' }}>
-                                Profiro is not a trading app. It is a powerful planner and tracker for your journey to freedom.
+                                Profiro is not a trading app. It is a powerful planner and tracker for your journey to financial freedom.
                             </p>
                         </div>
 
@@ -459,7 +462,7 @@ export default function Home() {
                                 <p className="feature-text text-slate-600">
                                     Breathe easy knowing exactly what it takes. Simply <strong>input your desired monthly income</strong> and set your timeline.
                                     <br /><br />
-                                    Profiro calculates exactly how much you need to contribute monthly (to your own brokerage) to reach freedom in that time.
+                                    Based on the proven <strong>4% Rule</strong>, Profiro calculates exactly how much you need to contribute monthly (to your own brokerage) to reach <strong>Financial Independence (FIRE)</strong>.
                                 </p>
                             </article>
 
@@ -468,9 +471,9 @@ export default function Home() {
                                 <div style={{ width: '100%', height: '160px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                     <img src="/ilustracni-obrazky/Compound-Interest.png" alt="Compound Interest" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                 </div>
-                                <h3 className="feature-title">Compound Interest</h3>
+                                <h3 className="feature-title">Compound Interest Calculator</h3>
                                 <p className="feature-text text-slate-600">
-                                    <span className="text-emerald-600" style={{ fontWeight: 600 }}>Make money while you sleep.</span> Visualize how compound interest turns your savings into a 24/7 income stream that grows exponentially.
+                                    <span className="text-emerald-600" style={{ fontWeight: 600 }}>Make money while you sleep.</span> If you only trade time for money, you'll work forever. Visualize how compound interest turns your savings into a 24/7 income stream that grows exponentially.
                                 </p>
                             </article>
 
@@ -481,7 +484,7 @@ export default function Home() {
                                 </div>
                                 <h3 className="feature-title">All Assets in One Place</h3>
                                 <p className="feature-text text-slate-600">
-                                    Unite everything in one spot. Manually create accounts for <strong>any asset</strong>: Cash, Bank, Crypto, or Real Estate. Watch your Net Worth grow.
+                                    Unite everything in one spot. Manually create accounts for <strong>any asset</strong>: Cash, Bank Accounts, Crypto (Bitcoin, ETH), or Real Estate. Update their value manually and watch your total Net Worth grow.
                                 </p>
                             </article>
 
@@ -492,7 +495,7 @@ export default function Home() {
                                 </div>
                                 <h3 className="feature-title">75/15/10 Rule</h3>
                                 <p className="feature-text text-slate-600">
-                                    Reclaim your peace. Learn to allocate 15% to investments and 10% to savings automatically, while living comfortably on the rest.
+                                    Reclaim your peace – this simple rule turns chaos into calm. Learn to allocate 15% to investments and 10% to savings automatically, while living comfortably on the rest.
                                 </p>
                             </article>
 
@@ -514,7 +517,7 @@ export default function Home() {
                                 </div>
                                 <h3 className="feature-title">Educational Hub</h3>
                                 <p className="feature-text text-slate-600">
-                                    Empower yourself with knowledge. Read built-in articles about The 4% Rule, Compound Interest, and budgeting systems.
+                                    Empower yourself with knowledge that sticks – understand the "why" behind the numbers. Read built-in articles about The 4% Rule, Compound Interest, and budgeting systems.
                                 </p>
                             </article>
                         </div>
@@ -527,19 +530,32 @@ export default function Home() {
                 <section id="urgency" className="urgency-dark-section">
                     <div className="urgency-glow"></div>
                     <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+
+                        {/* H2: Malý nadpis */}
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 500, color: '#94a3b8', marginBottom: '32px' }}>
-                            Don't wait for "more money" to start planning.
+                            Don't wait for "more money" to take control.
                         </h2>
 
+                        {/* H3: Hlavní nadpis */}
                         <h3 style={{ fontSize: '3rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '40px' }}>
                             <span className="text-gradient-mint">Time compounds your wealth</span><br />
                             <span className="text-gradient-red">— or your regrets.</span>
                         </h3>
 
+                        {/* P: Tělo textu - ROZDĚLENO PRO ČITELNOST */}
                         <p style={{ maxWidth: 700, margin: '0 auto 48px', fontSize: '1.25rem', color: '#cbd5e1', lineHeight: '1.6' }}>
-                            The biggest mistake is thinking you need to be rich to have a plan.
-                            The sooner you start, the less you'll need to invest each month.
-                            <strong style={{ color: '#fff', display: 'block', marginTop: '16px' }}>Start managing your path to freedom today.</strong>
+                            The biggest mistake is thinking you need to be rich to manage your money.
+                            In reality, <strong>managing what you have now</strong> is how you build wealth.
+                            <br /><br />
+                            The sooner you start, the less you'll need to invest each month – and the sooner you'll be free.
+                            <br /><br />
+                            Imagine looking back in 5 years, wishing you had started today.
+                            Don't let another day be stolen from your freedom.
+
+                            {/* CTA Text */}
+                            <strong style={{ color: '#fff', display: 'block', marginTop: '32px', fontSize: '1.3rem' }}>
+                                Your future self is begging you to start.
+                            </strong>
                         </p>
 
                         <a
@@ -631,6 +647,7 @@ export default function Home() {
                             <p style={{ marginTop: 16, color: "#475569", lineHeight: 1.6 }}>
                                 We believe in <strong>mindful spending</strong>. Automatic tracking often goes unnoticed.
                                 Manually entering transactions makes you hyper-aware of your spending habits, which is key to saving more.
+                                Plus, it guarantees that no third-party service ever accesses your bank credentials.
                             </p>
                         </details>
 
