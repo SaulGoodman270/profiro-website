@@ -42,7 +42,7 @@ export default function BlogIndex() {
 
       <main
         className="container"
-        style={{ maxWidth: 900, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}
+        style={{ maxWidth: 900, margin: "0 auto", padding: "32px 20px", lineHeight: 1.6 }}
       >
         <h1 style={{ marginBottom: 24 }}>Blog</h1>
 

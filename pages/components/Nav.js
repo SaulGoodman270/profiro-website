@@ -1,15 +1,43 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Nav() {
   const { pathname } = useRouter()
+  const [isVisible, setIsVisible] = useState(true)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const lastScrollY = useRef(0)
 
-  // Helper to check active state if we want to highlight link
-  // currently simply returning empty string or active class if needed
+  useEffect(() => {
+    const controlNavbar = () => {
+      // Use pageYOffset as fallback for scrollY on older mobile browsers
+      const currentScrollY = window.scrollY !== undefined ? window.scrollY : window.pageYOffset
+
+      // Determine if we are at the top (shadow logic)
+      setIsScrolled(currentScrollY > 20)
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        // Scrolling down - hide
+        setIsVisible(false)
+      } else {
+        // Scrolling up - show
+        setIsVisible(true)
+      }
+
+      lastScrollY.current = currentScrollY
+    }
+
+    // Passive listener for better scroll performance
+    window.addEventListener('scroll', controlNavbar, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', controlNavbar)
+    }
+  }, [])
+
   const isActive = (path) => pathname === path ? 'active' : ''
 
   return (
-    <nav>
+    <nav className={`${!isVisible ? 'nav-hidden' : ''} ${isScrolled ? 'nav-scrolled' : ''}`}>
       <div className="nav-inner">
         <Link href="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           {/* Logo Icon */}
