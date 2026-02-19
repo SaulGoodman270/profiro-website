@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Nav from "./components/Nav";
 
 export default function Terms() {
@@ -16,9 +17,9 @@ export default function Terms() {
 
       <Nav />
 
-      <main className="container" style={{ maxWidth: 880, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}>
-        <h1 style={{ lineHeight: 1.25, marginBottom: 8 }}>Terms of Use</h1>
-        <p style={{ color: "#475569" }}>
+      <main className="container legal-document">
+        <h1>Terms of Use</h1>
+        <p className="publish-date">
           <em>Effective date: October 16, 2025</em>
         </p>
 
@@ -28,7 +29,7 @@ export default function Terms() {
         </p>
         <p>By downloading, installing, or using the Application, you agree to these Terms. If you do not agree, you should not use the Application.</p>
 
-        <h2 style={{ marginTop: 24 }}>License and Ownership</h2>
+        <h2>License and Ownership</h2>
         <p>
           The Application is licensed, not sold. You are granted a personal, non-transferable, non-exclusive license to use the
           Application on devices that you own or control, subject to these Terms and Apple’s App Store Terms and Conditions.
@@ -39,7 +40,7 @@ export default function Terms() {
           written permission.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Intellectual Property &amp; Infringement</h2>
+        <h2>Intellectual Property &amp; Infringement</h2>
         <p>
           All intellectual property rights in and to the Application, including but not limited to copyrights, database rights,
           trademarks, trade dress, and other intellectual property rights, are and will remain the exclusive property of the Service
@@ -62,7 +63,7 @@ export default function Terms() {
           infringing material.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Subscription and Free Trial</h2>
+        <h2>Subscription and Free Trial</h2>
         <p>
           The Application offers a <strong>14-day free trial</strong> with full access to all features. After this period, continued
           access requires an active <strong>monthly or annual subscription</strong>, billed and managed through{" "}
@@ -70,7 +71,7 @@ export default function Terms() {
         </p>
         <p>Apple’s terms, refund policies, and billing rules apply. You can manage or cancel your subscription via your Apple ID settings.</p>
 
-        <h2 style={{ marginTop: 24 }}>Use of the Application</h2>
+        <h2>Use of the Application</h2>
         <p>
           You are responsible for maintaining the security of your device and access to the Application. Using the Application on
           jailbroken or rooted devices may compromise security and cause the Application to malfunction.
@@ -80,13 +81,13 @@ export default function Terms() {
           for data charges, network issues, or service interruptions.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Data Handling and Privacy</h2>
+        <h2>Data Handling and Privacy</h2>
         <p>
           The Application does not collect or store personal information on external servers. Data you enter remain on your device or in
           your private iCloud account via Apple’s CloudKit. See the <a href="/privacy">Privacy Policy</a> for details.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Disclaimer</h2>
+        <h2>Disclaimer</h2>
         <p>
           Profiro provides educational and planning tools and does <strong>not</strong> provide financial, investment, legal, or tax
           advice. You are solely responsible for financial decisions made using the Application.
@@ -97,19 +98,19 @@ export default function Terms() {
           from your use of the Application.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Updates and Termination</h2>
+        <h2>Updates and Termination</h2>
         <p>
           The Service Provider may update, modify, or discontinue the Application at any time. If discontinued, you must stop using and
           remove the Application. By accepting updates via the App Store, you agree to the updated Terms.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Changes to These Terms</h2>
+        <h2>Changes to These Terms</h2>
         <p>
           These Terms may be revised from time to time. Updates will be posted on this page with the new effective date. Continued use
           constitutes acceptance of the revised Terms.
         </p>
 
-        <h2 style={{ marginTop: 24 }}>Contact</h2>
+        <h2>Contact</h2>
         <p>
           Email: <a href="mailto:profiro.finance@gmail.com">profiro.finance@gmail.com</a>
           <br />
@@ -117,7 +118,19 @@ export default function Terms() {
         </p>
       </main>
 
-      <footer className="footer container">© {new Date().getFullYear()} Profiro. All rights reserved.</footer>
+      <footer className="footer footer-force-full">
+        <div className="container footer-inner">
+          <div>
+            <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>
+            <p>© {new Date().getFullYear()} Marek Brichcin. All rights reserved.</p>
+          </div>
+          <div className="footer-links">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/blog">Blog</Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

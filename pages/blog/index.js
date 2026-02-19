@@ -51,11 +51,13 @@ export default function BlogIndex() {
             <li key={p.slug} style={{ marginBottom: 48 }}>
               {p.image && (
                 <div style={{ marginBottom: 16, borderRadius: 12, overflow: "hidden" }}>
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    style={{ width: "100%", height: "auto", display: "block", maxHeight: 300, objectFit: "cover" }}
-                  />
+                  <Link href={`/blog/${p.slug}`}>
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      style={{ width: "100%", height: "240px", display: "block", objectFit: "cover", cursor: "pointer" }}
+                    />
+                  </Link>
                 </div>
               )}
               <h2 style={{ margin: "0 0 8px" }}>

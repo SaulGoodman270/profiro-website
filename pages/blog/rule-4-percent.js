@@ -16,12 +16,15 @@ export default function Post() {
 
       <Nav />
 
-      <main
-        className="container"
-        style={{ maxWidth: 880, margin: "0 auto", padding: "32px 16px", lineHeight: 1.65 }}
-      >
+      <main className="container blog-article">
         <h1>The 4% Rule: Your Ticket to Financial Freedom</h1>
-        <p><em>Published: October 20, 2025</em></p>
+        <p className="publish-date"><em>Published: October 20, 2025</em></p>
+
+        <img
+          src="/blog_pictures/4-percent-rule.jpg"
+          alt="The 4% Rule Illustration"
+          style={{ width: "100%" }}
+        />
 
         <p>
           Imagine waking up every morning knowing you never have to work for money again — not
@@ -71,8 +74,18 @@ export default function Post() {
         </p>
       </main>
 
-      <footer className="footer container">
-        © {new Date().getFullYear()} Profiro. All rights reserved.
+      <footer className="footer footer-force-full">
+        <div className="container footer-inner">
+          <div>
+            <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>
+            <p>© {new Date().getFullYear()} Marek Brichcin. All rights reserved.</p>
+          </div>
+          <div className="footer-links">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/blog">Blog</Link>
+          </div>
+        </div>
       </footer>
     </>
   );

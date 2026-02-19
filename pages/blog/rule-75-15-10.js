@@ -16,17 +16,14 @@ export default function Post() {
 
       <Nav />
 
-      <main
-        className="container"
-        style={{ maxWidth: 880, margin: "0 auto", padding: "32px 16px", lineHeight: 1.65 }}
-      >
+      <main className="container blog-article">
         <h1>The 75/15/10 Rule: A Compass for Your Money</h1>
-        <p><em>Published: October 20, 2025</em></p>
+        <p className="publish-date">Published: October 20, 2025</p>
 
         <img
           src="/blog_pictures/The-75-15-10-rule.png"
           alt="The 75/15/10 Rule Illustration"
-          style={{ width: "100%", borderRadius: 12, marginBottom: 24 }}
+          style={{ width: "100%" }}
         />
 
         <p>
@@ -82,8 +79,18 @@ export default function Post() {
         </p>
       </main>
 
-      <footer className="footer container">
-        © {new Date().getFullYear()} Profiro. All rights reserved.
+      <footer className="footer footer-force-full">
+        <div className="container footer-inner">
+          <div>
+            <p style={{ fontWeight: 700, color: "var(--color-primary)" }}>Profiro</p>
+            <p>© {new Date().getFullYear()} Marek Brichcin. All rights reserved.</p>
+          </div>
+          <div className="footer-links">
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Use</Link>
+            <Link href="/blog">Blog</Link>
+          </div>
+        </div>
       </footer>
     </>
   );

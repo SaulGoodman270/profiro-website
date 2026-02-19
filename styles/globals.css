@@ -1428,3 +1428,97 @@ details[open] summary::after {
     padding-right: 0;
   }
 }
+/* --- BLOG ARTICLE STYLING --- */
+.blog-article {
+  max-width: 800px !important;
+  color: #334155;
+  padding: 48px 20px !important;
+}
+
+.blog-article h1 {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  margin-bottom: 12px;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
+.blog-article .publish-date {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+  display: block;
+  font-style: italic;
+}
+
+.blog-article h2 {
+  font-size: 1.85rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  color: #0f172a;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+}
+
+.blog-article h3 {
+  font-size: 1.45rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.blog-article p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.blog-article ul, .blog-article ol {
+  margin-bottom: 1.75rem;
+  padding-left: 1.5rem;
+}
+
+.blog-article li {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.blog-article img {
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.blog-article hr {
+  border: 0;
+  border-top: 2px solid #f1f5f9;
+  margin: 4rem 0;
+}
+
+/* --- LEGAL DOCUMENT STYLING --- */
+.legal-document {
+  max-width: 880px !important;
+  padding: 60px 20px !important;
+  color: #334155;
+}
+
+.legal-document h1 {
+  margin-bottom: 32px;
+  font-size: 2.5rem;
+}
+
+.legal-document h2 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-size: 1.75rem;
+  color: #0f172a;
+}
+
+.legal-document p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.legal-document a {
+  text-decoration: underline;
+}
