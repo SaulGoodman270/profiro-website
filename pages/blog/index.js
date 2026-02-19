@@ -20,6 +20,7 @@ const posts = [
   {
     slug: "rule-75-15-10",
     title: "The 75/15/10 Rule: A Compass for Your Money",
+    image: "/blog_pictures/The-75-15-10-rule.png",
     excerpt: "A practical budgeting system — 15% investing, 10% saving, 75% living.",
     date: "2025-10-20",
   },

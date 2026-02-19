@@ -21,20 +21,10 @@ export default function Nav() {
           <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#0f172a' }}>Profiro</span>
         </Link>
         <div className="nav-links">
-          {/* On Landing Page (#links) vs Subpages (/links) */}
-          {pathname === '/' ? (
-            <>
-              <Link href="#features">Features</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="#faq">FAQ</Link>
-            </>
-          ) : (
-            <>
-              <Link href="/#features">Features</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="/#faq">FAQ</Link>
-            </>
-          )}
+          {/* Use standard <a> for anchors to ensure browser handles jump correctly across pages */}
+          <a href="/#features">Features</a>
+          <Link href="/blog" className={isActive('/blog')}>Blog</Link>
+          <a href="/#faq">FAQ</a>
         </div>
       </div>
     </nav>

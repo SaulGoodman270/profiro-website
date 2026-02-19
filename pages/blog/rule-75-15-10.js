@@ -23,6 +23,12 @@ export default function Post() {
         <h1>The 75/15/10 Rule: A Compass for Your Money</h1>
         <p><em>Published: October 20, 2025</em></p>
 
+        <img
+          src="/blog_pictures/The-75-15-10-rule.png"
+          alt="The 75/15/10 Rule Illustration"
+          style={{ width: "100%", borderRadius: 12, marginBottom: 24 }}
+        />
+
         <p>
           Most people handle money with no real plan — salary comes in, bills get paid, something
           gets spent, and if there’s anything left, maybe a bit gets saved. But that mindset rarely
