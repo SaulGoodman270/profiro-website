@@ -147,8 +147,17 @@ nav {
   transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav-hidden {
-  transform: translateY(-100%);
+@media (max-width: 1023px) {
+  .nav-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+/* Hard override for Desktop to prevent any hiding */
+@media (min-width: 1024px) {
+  nav {
+    transform: none !important;
+  }
 }
 
 .nav-scrolled {

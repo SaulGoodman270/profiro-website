@@ -9,28 +9,29 @@ export default function Nav() {
   const lastScrollY = useRef(0)
 
   useEffect(() => {
-    const controlNavbar = () => {
-      // Use pageYOffset as fallback for scrollY on older mobile browsers
-      const currentScrollY = window.scrollY !== undefined ? window.scrollY : window.pageYOffset
-
-      // Determine if we are at the top (shadow logic)
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
       setIsScrolled(currentScrollY > 20)
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        // Scrolling down - hide
-        setIsVisible(false)
-      } else {
-        // Scrolling up - show
+      if (window.innerWidth >= 1024) {
         setIsVisible(true)
+      } else {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+          setIsVisible(false) // Down
+        } else if (currentScrollY < lastScrollY.current) {
+          setIsVisible(true)  // Up
+        }
       }
 
+      if (currentScrollY < 10) setIsVisible(true)
       lastScrollY.current = currentScrollY
     }
 
-    // Passive listener for better scroll performance
-    window.addEventListener('scroll', controlNavbar, { passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
     return () => {
-      window.removeEventListener('scroll', controlNavbar)
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
     }
   }, [])
 
