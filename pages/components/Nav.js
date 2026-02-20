@@ -6,24 +6,41 @@ export default function Nav() {
   const { pathname } = useRouter()
   const [isVisible, setIsVisible] = useState(true)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isFixed, setIsFixed] = useState(false)
   const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      setIsScrolled(currentScrollY > 20)
+      setIsScrolled(currentScrollY > 10)
 
-      if (window.innerWidth >= 1024) {
-        setIsVisible(true)
-      } else {
-        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-          setIsVisible(false) // Down
+      if (window.innerWidth < 1024) {
+        if (currentScrollY > lastScrollY.current) {
+          // Scrolling DOWN:
+          if (currentScrollY < 80) {
+            // Very near the top: keep it absolute (still part of the flow)
+            setIsVisible(true)
+            setIsFixed(false)
+          } else {
+            // Further down: hide it
+            setIsVisible(false)
+            // Once hidden, we can switch it back to fixed for the "slide in" effect later
+            // but for now, we leave it hidden
+          }
         } else if (currentScrollY < lastScrollY.current) {
-          setIsVisible(true)  // Up
+          // Scrolling UP:
+          setIsVisible(true)
+          setIsFixed(true) // Switch to fixed so it can slide in from viewport top
         }
+      } else {
+        setIsVisible(true)
+        setIsFixed(true)
       }
 
-      if (currentScrollY < 10) setIsVisible(true)
+      if (currentScrollY < 10) {
+        setIsVisible(true)
+        setIsFixed(false) // Stick to top normally when at the very top
+      }
       lastScrollY.current = currentScrollY
     }
 
@@ -38,7 +55,11 @@ export default function Nav() {
   const isActive = (path) => pathname === path ? 'active' : ''
 
   return (
-    <nav className={`${!isVisible ? 'nav-hidden' : ''} ${isScrolled ? 'nav-scrolled' : ''}`}>
+    <nav className={`
+      ${!isVisible ? 'nav-hidden' : ''} 
+      ${isScrolled ? 'nav-scrolled' : ''} 
+      ${isFixed ? 'nav-fixed' : ''}
+    `}>
       <div className="nav-inner">
         <Link href="/" className="nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           {/* Logo Icon */}

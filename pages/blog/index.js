@@ -41,7 +41,7 @@ export default function BlogIndex() {
       <Nav />
 
       <main
-        className="container"
+        className="container blog-article"
         style={{ maxWidth: 900, margin: "0 auto", padding: "32px 20px", lineHeight: 1.6 }}
       >
         <h1 style={{ marginBottom: 24 }}>Blog</h1>
